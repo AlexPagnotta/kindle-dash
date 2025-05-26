@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
+import { Header } from "~/features/nav/header/header";
 
 import "~/features/style/main.css";
 
@@ -14,11 +15,11 @@ export const metadata: Metadata = {
   description: "kindle-dash",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+type RootLayoutProps = {
   children: React.ReactNode;
-}>) {
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${ibmPlexSans.variable}`}>
       <body>{children}</body>

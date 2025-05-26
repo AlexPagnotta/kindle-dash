@@ -107,6 +107,14 @@
   @apply text-body-1 font-body font-regular;
 }
 
+@utility scrollbar-hidden {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    @apply hidden;
+  }
+}
+
 @layer base {
   /* Base font size */
   :root {
