@@ -1,0 +1,15 @@
+{
+  "tailwindCSS.rootFontSize": 10,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cn\\(((?:[^()]|\\([^()]*\\))*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["\\w+Styles\\s*=\\s([^;]+)", "[\"'`]([^\"'`]*).*?[\"'`]"] // Matches styles in variables whose name ends with "Styles", includes arrays, objects etc.
+  ],
+  "tailwindCSS.classAttributes": ["class", "className", ".*Styles"], // Matches style in class and className attributes, and variables that end in "Styles"
+  "scss.lint.unknownAtRules": "ignore", // Fix lint error on tailwind config
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}

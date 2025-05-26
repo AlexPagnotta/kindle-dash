@@ -1,8 +1,8 @@
-# TRMNDLE
+# KindleDash
 
 ## What is this project?
 
-TRMNDLE is a small project inspired by the product [TRMNL](https://usetrmnl.com/), the goal is to recreate (more or less) the same functionalities, using an old unused kindle device.
+KindleDash is a small project inspired by the product [TRMNL](https://usetrmnl.com/), the goal is to recreate (more or less) the same functionalities, using an old unused kindle device.
 The idea behind it is pretty simple, we just load up a website in fullscreen mode on the Kindle's display, from there we can show pretty much anything we want, calendar events, todo lists, the latest news, weather updates, etc.
 Since it's all web-based, backed by server side functions, we can easily tweak the UI, add new functioanlities, and integrate third party services using APIs.
 

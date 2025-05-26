@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors */
+
+  --color-*: initial;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-400: #888888;
+  --color-gray-800: #444444;
+
+  /* Spacing */
+
+  --spacing-*: initial;
+
+  --spacing-0: 0;
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-28: 28px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-56: 56px;
+  --spacing-64: 64px;
+  --spacing-96: 96px;
+  --spacing-128: 128px;
+  --spacing-192: 192px;
+  --spacing-256: 256px;
+  --spacing-384: 384px;
+
+  /* Typography */
+
+  --font-*: initial;
+  --font-body: var(--font-ibm-plex-sans), sans-serif;
+
+  --font-weight-*: initial;
+  --font-weight-regular: 400;
+  --font-weight-semi-bold: 600;
+
+  --text-*: initial;
+
+  --text-title-1: 32px;
+  --text-title-1--line-height: 1.4;
+
+  --text-title-2: 28px;
+  --text-title-2--line-height: 1.5;
+
+  --text-body-3: 24px;
+  --text-body-3--line-height: 1.5;
+
+  --text-body-2: 20px;
+  --text-body-2--line-height: 1.5;
+
+  --text-body-1: 16px;
+  --text-body-1--line-height: 1.5;
+
+  --leading-*: initial;
+  --leading-none: 1;
+  --leading-sm: 1.4;
+  --leading-md: 1.5;
+
+  /* Others */
+
+  --radius-*: initial;
+  --radius-none: 0rem;
+  --radius-xs: 0.4rem;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+}
+
+@utility copy-title-1 {
+  @apply text-title-1 font-body font-regular;
+}
+
+@utility copy-title-1-strong {
+  @apply text-title-1 font-body font-semi-bold;
+}
+
+@utility copy-title-2 {
+  @apply text-title-2 font-body font-regular;
+}
+
+@utility copy-body-3 {
+  @apply text-body-3 font-body font-regular;
+}
+
+@utility copy-body-3-strong {
+  @apply text-body-3 font-body font-semi-bold;
+}
+
+@utility copy-body-2 {
+  @apply text-body-2 font-body font-regular;
+}
+
+@utility copy-body-2-strong {
+  @apply text-body-2 font-body font-semi-bold;
+}
+
+@utility copy-body-1 {
+  @apply text-body-1 font-body font-regular;
+}
+
+@layer base {
+  /* Base font size */
+  :root {
+    /* Set the base font size to 10px, useful for rem calculations */
+    font-size: calc((10 / 16) * 100%);
+  }
+
+  /* Global Styles */
+  html {
+    @apply leading-none h-full;
+  }
+
+  body {
+    @apply antialiased copy-body-2 overflow-hidden w-[800px] h-[600px];
+  }
+}
