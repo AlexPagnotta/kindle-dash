@@ -22,6 +22,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "iron-session": "^8.0.4",
     "lucide-react": "^0.511.0",
     "next": "15.1.8",
     "react": "^19.0.0",
