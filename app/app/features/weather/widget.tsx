@@ -23,7 +23,7 @@ export const WeatherWidget = async ({ className, ...rest }: WeatherWidgetProps) 
   const WeatherIcon = weatherData ? getWeatherIcon(weatherData.weatherCode) : null;
 
   return (
-    <Tile className={cn("flex items-center justify-center", className)} {...rest}>
+    <Tile className={cn("flex items-center justify-center gap-40", className)} {...rest}>
       {hasError || !weatherData || !WeatherIcon ? (
         <div className="flex items-center justify-center h-full copy-body-1 ">Failed to load weather data</div>
       ) : (
