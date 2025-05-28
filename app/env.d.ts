@@ -9,6 +9,7 @@ declare global {
       // Private
       SESSION_SECRET: string;
       APP_PIN: string;
+      WEATHER_LOCATION: string;
     }
   }
 }
