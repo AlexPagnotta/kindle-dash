@@ -2,38 +2,56 @@ import { ComponentPropsWithoutRef } from "react";
 import { cn } from "../style/utils";
 import { Tile, TileTitle } from "../ui/tile";
 import { Check } from "lucide-react";
+import { getTasks, Task, TaskType } from "./data";
 
 type TasksWidgetProps = Omit<ComponentPropsWithoutRef<typeof Tile>, "title"> & {
+  type: TaskType;
   preview?: boolean;
 };
 
-export const TasksWidget = ({ preview, className, ...rest }: TasksWidgetProps) => {
-  //TODO: Fetch data
+export const TasksWidget = async ({ type, preview, className, ...rest }: TasksWidgetProps) => {
+  let hasError = false;
+  let tasks: Task[] = [];
+
+  try {
+    tasks = await getTasks(type);
+  } catch (error) {
+    hasError = true;
+  }
 
   return (
     <Tile className={cn("h-full min-h-0", className)} {...rest}>
       <div className="flex flex-col h-full gap-16 px-16 py-24 overflow-y-auto scrollbar-hidden">
-        {[...Array(10)].map((_, index) => {
-          const isSelected = index >= 4;
+        {hasError || !tasks || tasks.length === 0 ? (
+          <div className="flex items-center justify-center h-full copy-body-1">Failed to load tasks</div>
+        ) : (
+          tasks.map((task) => {
+            const isCompleted = ["done", "archived"].includes(task.status);
 
-          return (
-            <div key={index} className="flex gap-20 items-center">
-              <div
-                className={cn(
-                  "size-20 rounded-sm border border-gray-800 flex items-center justify-center",
-                  isSelected && "bg-gray-400"
-                )}
-              >
-                {isSelected && <Check className="size-16 shrink-0 text-white" />}
+            if (preview && type === "tasks" && isCompleted) return null;
+
+            return (
+              <div key={task.id} className="flex gap-20 items-center">
+                <div
+                  className={cn(
+                    "size-20 rounded-sm border border-gray-800 flex items-center justify-center",
+                    isCompleted && "bg-gray-400"
+                  )}
+                >
+                  {isCompleted && <Check className="size-16 shrink-0 text-white" />}
+                </div>
+                <div className="flex-1 min-w-0 w-full flex flex-col gap-4">
+                  {/* {task.project && <div className="copy-body-1 text-gray-400">{task.project}</div>} */}
+                  <div className={cn("copy-body-2 line-clamp-2", isCompleted && "line-through text-gray-400")}>
+                    {task.title}
+                  </div>
+                </div>
               </div>
-              <div className="flex-1 min-w-0 w-full">
-                <div className="copy-body-2 line-clamp-2">Task Name</div>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })
+        )}
       </div>
-      {!preview && <TileTitle>Tasks</TileTitle>}
+      {!preview && <TileTitle>{type === "tasks" ? "Tasks" : "Quick Collect"}</TileTitle>}
     </Tile>
   );
 };

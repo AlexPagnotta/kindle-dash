@@ -10,6 +10,9 @@ declare global {
       SESSION_SECRET: string;
       APP_PIN: string;
       WEATHER_LOCATION: string;
+      NOTION_API_KEY: string;
+      NOTION_TASKS_DATABASE_ID: string;
+      NOTION_QUICK_COLLECT_DATABASE_ID: string;
     }
   }
 }
