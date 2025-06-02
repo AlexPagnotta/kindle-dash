@@ -25,7 +25,6 @@ export const Header = () => {
         <NavLink href="/">Home</NavLink>
         <NavLink href="/news">News</NavLink>
         <NavLink href="/tasks">Tasks</NavLink>
-        <NavLink href="/calendar">Calendar</NavLink>
       </div>
 
       <div className="flex gap-24 items-center">

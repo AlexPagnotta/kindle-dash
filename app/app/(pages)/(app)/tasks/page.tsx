@@ -1,4 +1,3 @@
-import { EventsWidget } from "~/features/events/widget";
 import { TasksWidget } from "~/features/tasks/widget";
 import { PageRevalidator } from "~/features/utils/page-revalidator";
 
