@@ -2,17 +2,19 @@
 
 ## What is this project?
 
-KindleDash is a small project inspired by the product [TRMNL](https://usetrmnl.com/), the goal is to recreate (more or less) the same functionalities, using an old unused kindle device.
+KindleDash is a small project inspired by the product [TRMNL](https://usetrmnl.com/), the goal is to more or less recreate the same functionalities, using an old unused kindle device.
 The idea behind it is pretty simple, we just load up a website in fullscreen mode on the Kindle's display, from there we can show pretty much anything we want, calendar events, todo lists, the latest news, weather updates, etc.
-Since it's all web-based, backed by server side functions, we can easily tweak the UI, add new functioanlities, and integrate third party services using APIs.
+Since it's all web-based, backed by server side functions, we can easily tweak the UI, add new functionalities, and integrate third party services using APIs.
 
-TODO: Add photos improve intro text
+TODO: Add photos
 
 ## Requirements
 
 - A kindle that supports jailbreak, this is needed to have the browser in fullscreen mode and disable screen sleep
 - Host the website side of this project somewhere, either on the internet or locally
-- A stand/case for the kindle, to keep it standing on the desk TODO: Add link to mine when ready
+- A stand/case for the kindle, to keep it standing on the desk TODO: Add link to download 3d model when ready
+
+## Disclaimer
 
 ## Project Structure
 

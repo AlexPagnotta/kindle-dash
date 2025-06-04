@@ -2,6 +2,7 @@ import { getIronSession, SessionOptions } from "iron-session";
 import { cookies } from "next/headers";
 
 export interface SessionData {
+  // No need to store any additional info for our use case
   isAuthenticated: boolean;
 }
 

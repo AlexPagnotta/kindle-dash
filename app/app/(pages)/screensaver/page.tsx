@@ -1,6 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import { getRandomUnsplashImage } from "./data";
+
+// Avoid caching the page, screensaver is fetched on every request
+export const dynamic = "force-dynamic";
 
 export default async function ScreensaverPage() {
   const imageData = await getRandomUnsplashImage(process.env.SCREENSAVER_QUERY);
