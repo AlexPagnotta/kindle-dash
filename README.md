@@ -8,13 +8,9 @@ Since it's all web-based, backed by server side functions, we can easily tweak t
 
 TODO: Add photos
 
-## Requirements
+## Why?
 
-- A kindle that supports jailbreak, this is needed to have the browser in fullscreen mode and disable screen sleep
-- Host the website side of this project somewhere, either on the internet or locally
-- A stand/case for the kindle, to keep it standing on the desk TODO: Add link to download 3d model when ready
-
-## Disclaimer
+You may ask, why not simply buy a TRMNL device, or use the [TRMNL Kindle project](https://usetrmnl.com/guides/turn-your-amazon-kindle-into-a-trmnl)? Well, the answer is pretty simple, I wanted to build it by myself, spend some time on a fun project, and make it as much tailored for me as possible.
 
 ## Project Structure
 
@@ -27,7 +23,18 @@ The scripts folder contains useful scripts to set up the kindle:
 
 ### App
 
-TODO:
+The app folder contains the NextJS website that will be loaded as dashboard on the kindle, see [app readme](app/README.md) for additional info.
+
+## Disclaimer
+
+This project was primarly created for my own use and specific needs, it was not developed with the idea of being used by others.
+I decided to make it public for several reasons, to be a showcase on my website, to serve as inspiration, or potentially to be used as a base for a fork, but wathever you decide to do with it, **you do it at your own risk**, including instructions below to for the Kindle side of the project.
+
+## Requirements
+
+- A kindle that supports jailbreak, this is needed to have the browser in fullscreen mode and disable screen sleep
+- Host the website side of this project somewhere, either on the internet or locally
+- A stand/case for the kindle, to keep it standing on the desk TODO: Add link to download 3d model when ready
 
 ## Instructions
 
