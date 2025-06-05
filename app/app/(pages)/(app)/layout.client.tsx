@@ -1,3 +1,5 @@
+"use client";
+
 import { useRevalidateData } from "~/features/utils/use-revalidate-data";
 
 export const AppLayoutClient = ({ children }: { children: React.ReactNode }) => {
