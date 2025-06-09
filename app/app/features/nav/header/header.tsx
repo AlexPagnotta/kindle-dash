@@ -3,9 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "../../style/utils";
-import { Bubbles, Palette, SmartphoneCharging } from "lucide-react";
+import { Bubbles, Palette } from "lucide-react";
 import { useGetDateTime } from "./use-get-date-time";
-import { useGetBatteryInfo } from "./use-get-battery-level";
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
   const isActive = usePathname() === href;
@@ -19,7 +18,7 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
 
 export const Header = () => {
   const currentDateTime = useGetDateTime();
-  const batteryInfo = useGetBatteryInfo();
+  // const batteryInfo = useGetBatteryInfo();
 
   return (
     <header className="w-full h-[60px] px-24 flex items-center justify-between">
@@ -30,12 +29,12 @@ export const Header = () => {
       </div>
 
       <div className="flex gap-24 items-center">
-        {batteryInfo && (
+        {/* {batteryInfo && (
           <div className="flex gap-8 items-center">
             <div className="copy-body-2">{batteryInfo.level}%</div>
             {batteryInfo.isCharging && <SmartphoneCharging className="size-24 text-green-500" />}
           </div>
-        )}
+        )} */}
         <Link href="/screen-reset">
           <Bubbles className="size-24" />
         </Link>
