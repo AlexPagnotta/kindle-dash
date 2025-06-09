@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const UPDATE_INTERVAL = 10_000;
+const UPDATE_INTERVAL = 10_000; // 10 seconds
 
 /**
  * Returns the current date and time in the format "DD MMM HH:MM"

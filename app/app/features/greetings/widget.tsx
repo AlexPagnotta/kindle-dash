@@ -11,9 +11,12 @@ export const GreetingsWidget = () => {
   useEffect(() => {
     setGreeting(getGreeting());
 
-    const interval = setInterval(() => {
-      setGreeting(getGreeting());
-    }, 3600000); // 1 hour
+    const interval = setInterval(
+      () => {
+        setGreeting(getGreeting());
+      },
+      60 * 60 * 1000 // 1 hour
+    );
 
     return () => clearInterval(interval);
   }, []);
