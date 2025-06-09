@@ -33,9 +33,12 @@ type RootLayoutProps = {
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  const isProd = process.env.NODE_ENV === "production";
+
   return (
     <html lang="en" className={`${ibmPlexSans.variable}`}>
-      <body>{children}</body>
+      {/* Cursor is hidden in production, as app is meant to be used with touch */}
+      <body className={isProd ? "cursor-none" : ""}>{children}</body>
     </html>
   );
 }
