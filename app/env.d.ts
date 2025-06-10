@@ -5,6 +5,7 @@ declare global {
       // Public
       NEXT_PUBLIC_BASE_URL: string;
       NEXT_PUBLIC_USER_NAME: string;
+      NEXT_PUBLIC_TIMEZONE: string;
 
       // Private
       SESSION_SECRET: string;
