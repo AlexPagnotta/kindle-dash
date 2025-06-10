@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getRandomUnsplashImage } from "./data";
+import { DitheredImage } from "./dithered-image/dithered-image";
 
 // Avoid caching the page, screensaver is fetched on every request
 export const dynamic = "force-dynamic";
@@ -12,7 +13,11 @@ export default async function ScreensaverPage() {
   return (
     <main className="relative size-full overflow-hidden">
       <Link href="/" className="size-full">
-        <img src={`${imageBaseUrl}?q=80&w=800&auto=format&fit=crop`} alt="" className="object-cover size-full" />
+        <DitheredImage
+          src={`${imageBaseUrl}?q=80&w=800&auto=format&fit=crop`}
+          alt="Screensaver image"
+          className="object-cover size-full"
+        />
       </Link>
     </main>
   );
