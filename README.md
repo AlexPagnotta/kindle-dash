@@ -25,6 +25,10 @@ The scripts folder contains useful scripts to set up the kindle:
 
 The app folder contains the NextJS website that will be loaded as dashboard on the kindle, see [app readme](app/README.md) for additional info.
 
+### 3D Model
+
+The `3d_model` folder contains a ready to print `.stl` file of a custom case I made for the kindle, for mere info see the [3d model readme](3d_model/README.md).
+
 ## Disclaimer
 
 This project was primarly created for my own use and specific needs, it was not developed with the idea of being used by others.
@@ -34,7 +38,7 @@ I decided to make it public for several reasons, to be a showcase on my website,
 
 - A kindle that supports jailbreak, this is needed to have the browser in fullscreen mode and disable screen sleep
 - Host the website side of this project somewhere, either on the internet or locally
-- A stand/case for the kindle, to keep it standing on the desk TODO: Add link to download 3d model when ready
+- A stand/case for the kindle, to keep it standing on the desk, a 3D printable case is available [here](3d_model/README.md)
 
 ## Instructions
 
