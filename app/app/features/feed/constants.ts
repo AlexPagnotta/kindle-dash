@@ -12,4 +12,8 @@ export const RSS_FEEDS: RssFeedItem[] = [
     name: "HDBlog",
     url: "https://www.hdblog.it/feed",
   },
+  {
+    name: "Ansa",
+    url: "https://www.ansa.it/sito/ansait_rss.xml",
+  },
 ];

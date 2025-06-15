@@ -3,8 +3,18 @@
  * @returns The greeting based on the current time
  */
 export const getGreeting = (): string => {
-  const now = new Date();
-  const hour = now.getHours();
+  // Get timezone from environment variable
+  const timezone = process.env.NEXT_PUBLIC_TIMEZONE;
+
+  // Create a formatter for the specified timezone
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    hour: "numeric",
+    hour12: false,
+    timeZone: timezone,
+  });
+
+  // Get the hour in the specified timezone
+  const hour = parseInt(formatter.format(new Date()), 10);
 
   if (hour >= 6 && hour < 12) {
     return "Good Morning";

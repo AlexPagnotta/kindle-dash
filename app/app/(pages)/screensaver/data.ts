@@ -1,8 +1,3 @@
-interface UnsplashImage {
-  id: string;
-  imageUrl: string;
-}
-
 const UNSPLASH_API_KEY = process.env.UNSPLASH_API_KEY;
 
 /**
@@ -16,6 +11,7 @@ export const getRandomUnsplashImage = async (query: string) => {
       headers: {
         Authorization: `Client-ID ${UNSPLASH_API_KEY}`,
       },
+      next: { revalidate: 30 },
     });
 
     if (!response.ok) {

@@ -1,57 +1,24 @@
-import { ComponentPropsWithoutRef } from "react";
-import { cn } from "../style/utils";
-import { Tile, TileTitle } from "../ui/tile";
-import { Check } from "lucide-react";
-import { getTasks, Task, TaskType } from "./data";
+import { type ComponentPropsWithoutRef } from "react";
 
-type TasksWidgetProps = Omit<ComponentPropsWithoutRef<typeof Tile>, "title"> & {
+import { type Tile } from "../ui/tile";
+
+import { getTasks, type TaskType } from "./data";
+import { TasksWidgetClient } from "./widget.client";
+
+export type TasksWidgetProps = Omit<ComponentPropsWithoutRef<typeof Tile>, "title"> & {
   type: TaskType;
   preview?: boolean;
 };
 
-export const TasksWidget = async ({ type, preview, className, ...rest }: TasksWidgetProps) => {
-  let hasError = false;
-  let tasks: Task[] = [];
+export const TasksWidget = async (props: TasksWidgetProps) => {
+  let initialData = undefined;
+  let hasInitialDataError = false;
 
   try {
-    tasks = await getTasks(type);
-  } catch (error) {
-    hasError = true;
+    initialData = await getTasks(props.type);
+  } catch {
+    hasInitialDataError = true;
   }
 
-  return (
-    <Tile className={cn("h-full min-h-0", className)} {...rest}>
-      <div className="flex flex-col h-full gap-16 px-16 py-24 overflow-y-auto scrollbar-hidden">
-        {hasError || !tasks || tasks.length === 0 ? (
-          <div className="flex items-center justify-center h-full copy-body-1">Failed to load tasks</div>
-        ) : (
-          tasks.map((task) => {
-            const isCompleted = ["done", "archived"].includes(task.status);
-
-            if (preview && type === "tasks" && isCompleted) return null;
-
-            return (
-              <div key={task.id} className="flex gap-20 items-center">
-                <div
-                  className={cn(
-                    "size-20 rounded-sm border border-gray-800 flex items-center justify-center",
-                    isCompleted && "bg-gray-400"
-                  )}
-                >
-                  {isCompleted && <Check className="size-16 shrink-0 text-white" />}
-                </div>
-                <div className="flex-1 min-w-0 w-full flex flex-col gap-4">
-                  {/* {task.project && <div className="copy-body-1 text-gray-400">{task.project}</div>} */}
-                  <div className={cn("copy-body-2 line-clamp-2", isCompleted && "line-through text-gray-400")}>
-                    {task.title}
-                  </div>
-                </div>
-              </div>
-            );
-          })
-        )}
-      </div>
-      {!preview && <TileTitle>{type === "tasks" ? "Tasks" : "Quick Collect"}</TileTitle>}
-    </Tile>
-  );
+  return <TasksWidgetClient initialData={initialData} hasInitialDataError={hasInitialDataError} {...props} />;
 };

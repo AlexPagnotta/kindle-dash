@@ -1,3 +1,5 @@
+"use server";
+
 const GEOCODING_API_BASE_URL = "https://geocoding-api.open-meteo.com/v1";
 const WEATHER_API_BASE_URL = "https://api.open-meteo.com/v1";
 

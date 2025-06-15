@@ -1,24 +1,12 @@
-"use client";
-
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { cn } from "../../style/utils";
 import { Bubbles, Palette } from "lucide-react";
-import { useGetDateTime } from "./use-get-date-time";
+import Link from "next/link";
 
-const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
-  const isActive = usePathname() === href;
-
-  return (
-    <Link href={href} className={cn("copy-body-2", isActive && "underline underline-offset-8")}>
-      {children}
-    </Link>
-  );
-};
+import { HeaderDateTime } from "./date-time";
+import { NavLink } from "./nav-link";
+import { getCurrentDateTime } from "./utils";
 
 export const Header = () => {
-  const currentDateTime = useGetDateTime();
-  // const batteryInfo = useGetBatteryInfo();
+  const currentDateTime = getCurrentDateTime();
 
   return (
     <header className="w-full h-[60px] px-24 flex items-center justify-between">
@@ -29,19 +17,13 @@ export const Header = () => {
       </div>
 
       <div className="flex gap-24 items-center">
-        {/* {batteryInfo && (
-          <div className="flex gap-8 items-center">
-            <div className="copy-body-2">{batteryInfo.level}%</div>
-            {batteryInfo.isCharging && <SmartphoneCharging className="size-24 text-green-500" />}
-          </div>
-        )} */}
         <Link href="/screen-reset">
           <Bubbles className="size-24" />
         </Link>
         <Link href="/screensaver">
           <Palette className="size-24" />
         </Link>
-        <div className="min-w-[130px]">{currentDateTime}</div>
+        <HeaderDateTime initialDateTime={currentDateTime} className="min-w-[130px]" />
       </div>
     </header>
   );

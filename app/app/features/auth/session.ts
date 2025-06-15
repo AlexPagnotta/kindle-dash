@@ -1,10 +1,10 @@
-import { getIronSession, SessionOptions } from "iron-session";
+import { getIronSession, type SessionOptions } from "iron-session";
 import { cookies } from "next/headers";
 
-export interface SessionData {
+export type SessionData = {
   // No need to store any additional info for our use case
   isAuthenticated: boolean;
-}
+};
 
 export const sessionOptions: SessionOptions = {
   password: process.env.SESSION_SECRET,

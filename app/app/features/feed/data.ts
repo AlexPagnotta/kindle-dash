@@ -1,5 +1,6 @@
 import Parser from "rss-parser";
-import { RSS_FEEDS, RssFeedItem } from "./constants";
+
+import { RSS_FEEDS, type RssFeedItem } from "./constants";
 
 export type RSSFeedItem = {
   title: string;
@@ -17,7 +18,7 @@ const fetchSingleFeed = async (feedConfig: RssFeedItem): Promise<RSSFeedItem[]> 
   try {
     const feed = await parser.parseURL(feedConfig.url);
 
-    if (!feed.items || feed.items.length === 0) {
+    if (feed.items.length === 0) {
       console.warn(`No items found in RSS feed: ${feedConfig.name}`);
       return [];
     }

@@ -1,7 +1,10 @@
-
 module.exports = {
   root: true,
   extends: ["plugin:@next/next/recommended", "eslint-config-react-alexpagnotta"],
+  parserOptions: {
+    project: "./tsconfig.json",
+    tsconfigRootDir: __dirname,
+  },
   overrides: [
     {
       files: [

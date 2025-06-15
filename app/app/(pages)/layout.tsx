@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
-import { Header } from "~/features/nav/header/header";
 
 import "~/features/style/main.css";
 

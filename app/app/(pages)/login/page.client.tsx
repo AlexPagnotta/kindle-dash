@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import { ArrowLeft, ArrowRightToLine } from "lucide-react";
-import { auth } from "./actions";
+import { useState } from "react";
+
 import { cn } from "~/features/style/utils";
 
-interface LoginPageClientProps {
+import { auth } from "./actions";
+
+type LoginPageClientProps = {
   rateLimitError?: boolean;
-}
+};
 
 export const LoginPageClient = ({ rateLimitError }: LoginPageClientProps) => {
   const [pin, setPin] = useState("");

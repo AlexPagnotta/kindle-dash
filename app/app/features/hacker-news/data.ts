@@ -16,7 +16,7 @@ const fetchStoryDetails = async (id: number): Promise<HackerNewsStory | null> =>
     const response = await fetch(`${HACKER_NEWS_API_BASE_URL}/item/${id}.json`);
     if (!response.ok) throw new Error(`Failed to fetch hacker news story details for id: ${id}`);
 
-    const data: HackerNewsStory = await response.json();
+    const data: HackerNewsStory | undefined = await response.json();
 
     if (!data) throw new Error(`Failed to fetch hacker news story details for id: ${id}`);
 
@@ -37,7 +37,7 @@ export const fetchHackerNewsStories = async (limit: number = 10) => {
 
     if (!response.ok) throw new Error("Failed to fetch hacker news top stories ids");
 
-    const storyIds: number[] = await response.json();
+    const storyIds: number[] | undefined = await response.json();
 
     if (!storyIds || storyIds.length === 0) throw new Error("Failed to fetch hacker news top stories ids");
 

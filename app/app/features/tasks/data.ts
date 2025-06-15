@@ -101,6 +101,7 @@ export const getTasks = async (type: TaskType): Promise<Task[]> => {
             },
     });
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const tasks = response.results.map((item: any) => {
       const name = (item.properties.Nome?.title?.[0]?.plain_text || "Untitled Task") as string;
 

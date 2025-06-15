@@ -1,8 +1,9 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { getSession } from "~/features/auth/session";
+
 import { isLoginDisabled, recordFailedAttempt } from "~/features/auth/rate-limiter";
+import { getSession } from "~/features/auth/session";
 
 export async function auth(formData: FormData) {
   // Check if login is disabled due to rate limiting
