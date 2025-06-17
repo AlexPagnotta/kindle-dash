@@ -25,6 +25,113 @@ export const getTasks = async (type: TaskType): Promise<Task[]> => {
   try {
     if (!DATABASE_ID) throw new Error("Database ID environment variable is not set");
 
+    if (type === "tasks") {
+      return [
+        {
+          id: "1",
+          title: "Fix the bug in the Matrix",
+          status: "in-progress",
+        },
+        {
+          id: "2",
+          title: "Convert coffee into code (efficiency: 99.9%)",
+          status: "done",
+        },
+        {
+          id: "3",
+          title: "Teach AI to understand sarcasm",
+          status: "in-progress",
+        },
+        {
+          id: "4",
+          title: "Debug the meaning of life (error: 42 not found)",
+          status: "not-started",
+        },
+        {
+          id: "5",
+          title: "Create a blockchain for cat memes",
+          status: "backlog",
+        },
+        {
+          id: "6",
+          title: "Implement infinite loop in real life",
+          status: "in-progress",
+        },
+        {
+          id: "7",
+          title: "Optimize sleep() function to run in O(0) time",
+          status: "not-started",
+        },
+        {
+          id: "8",
+          title: "Deploy serverless architecture to Mars",
+          status: "done",
+        },
+        {
+          id: "9",
+          title: "Write documentation for teleportation API",
+          status: "in-progress",
+        },
+        {
+          id: "10",
+          title: "Create a neural network that generates dad jokes",
+          status: "backlog",
+        },
+      ];
+    } else {
+      return [
+        {
+          id: "11",
+          title: "Fix the bug in the Matrix",
+          status: "not-started",
+        },
+        {
+          id: "12",
+          title: "Implement quantum computing in JavaScript",
+          status: "in-progress",
+        },
+        {
+          id: "13",
+          title: "Create a recursive function that never ends",
+          status: "backlog",
+        },
+        {
+          id: "14",
+          title: "Debug the universe (segmentation fault in reality)",
+          status: "in-progress",
+        },
+        {
+          id: "15",
+          title: "Write a compiler for Klingon",
+          status: "not-started",
+        },
+        {
+          id: "16",
+          title: "Deploy server to the cloud (actual cloud)",
+          status: "done",
+        },
+        {
+          id: "17",
+          title: "Create a REST API for time travel",
+          status: "in-progress",
+        },
+        {
+          id: "18",
+          title: "Implement infinite recursion in real life",
+          status: "backlog",
+        },
+        {
+          id: "19",
+          title: "Write unit tests for the laws of physics",
+          status: "not-started",
+        },
+        {
+          id: "20",
+          title: "Create a neural network that understands Stack Overflow",
+          status: "in-progress",
+        },
+      ];
+    }
     // Get today's date as YYYY-MM-DD, for filtering
     const today = new Date().toISOString().split("T")[0]!;
 

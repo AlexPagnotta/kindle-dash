@@ -5,15 +5,11 @@ export type RssFeedItem = {
 
 export const RSS_FEEDS: RssFeedItem[] = [
   {
-    name: "IlPost",
-    url: "https://www.ilpost.it/feed",
+    name: "The Verge",
+    url: "http://theverge.com/rss/index.xml",
   },
   {
-    name: "HDBlog",
-    url: "https://www.hdblog.it/feed",
-  },
-  {
-    name: "Ansa",
-    url: "https://www.ansa.it/sito/ansait_rss.xml",
+    name: "CNN",
+    url: "http://rss.cnn.com/rss/cnn_topstories.rssd",
   },
 ];

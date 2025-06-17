@@ -35,7 +35,7 @@ export const WeatherWidgetClient = ({ initialData, hasInitialDataError, location
         <>
           <WeatherIcon className="size-[80px]" />
           <div className="flex flex-col text-center">
-            <div className="copy-title-2">{location}</div>
+            <div className="copy-title-2">Rome</div>
             <div className="copy-title-1-strong">{`${weatherData.temperature}°C`}</div>
           </div>
         </>
