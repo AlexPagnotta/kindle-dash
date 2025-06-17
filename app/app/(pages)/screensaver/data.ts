@@ -11,7 +11,6 @@ export const getRandomUnsplashImage = async (query: string) => {
       headers: {
         Authorization: `Client-ID ${UNSPLASH_API_KEY}`,
       },
-      next: { revalidate: 30 },
     });
 
     if (!response.ok) {
