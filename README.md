@@ -2,8 +2,9 @@
 
 ## What is this project?
 
-KindleDash is a small project inspired by the product [TRMNL](https://usetrmnl.com/), the goal is to more or less recreate the same functionalities, using an old unused kindle device.
-The idea behind it is pretty simple, we just load up a website in fullscreen mode on the Kindle's display, from there we can show pretty much anything we want, calendar events, todo lists, the latest news, weather updates, etc.
+KindleDash is a small project inspired by the product [TRMNL](https://usetrmnl.com/), the goal is to repurpose an old kindle device to recreate the same functionalities and more.
+
+The idea behind it is pretty simple, we load up a website in fullscreen mode on the Kindle's display, from there we can show pretty much anything we want, todo lists, the latest news, weather updates, images etc.
 Since it's all web-based, backed by server side functions, we can easily tweak the UI, add new functionalities, and integrate third party services using APIs.
 
 <p float="left">
