@@ -6,7 +6,13 @@ KindleDash is a small project inspired by the product [TRMNL](https://usetrmnl.c
 The idea behind it is pretty simple, we just load up a website in fullscreen mode on the Kindle's display, from there we can show pretty much anything we want, calendar events, todo lists, the latest news, weather updates, etc.
 Since it's all web-based, backed by server side functions, we can easily tweak the UI, add new functionalities, and integrate third party services using APIs.
 
-TODO: Add photos
+<p float="left">
+  <img src="/images/home.jpeg" width="100" /> 
+  <img src="/images/news.jpeg" width="100" />
+  <img src="/images/screensaver.jpeg" width="100" />
+  <img src="/images/back.jpeg" width="100" />
+  <img src="/images/blank.jpeg" width="100" />
+</p>
 
 ## Why?
 
